@@ -7,7 +7,7 @@ import {DialogsPageType} from "../../redux/state";
 export function Dialogs(props: DialogsPageType) {
 
     let dialogElements = props.dialogs.map(dialog => <DialogItem id={dialog.id} name={dialog.name}/>)
-    let messageElements = props.messages.map(message => <Message id={message.id} messages={message.messages}/>)
+    let messageElements = props.messages.map(message => <Message id={message.id} sender={message.sender} messages={message.messages}/>)
 
     return (
         <div className={s.dialogs}>

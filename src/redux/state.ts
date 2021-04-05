@@ -9,6 +9,7 @@ export type DialogsType = {
 }
 export type MessageType = {
     id: number
+    sender: string
     messages: string
 }
 export type ProfilePageType = {
@@ -40,9 +41,13 @@ let state: AppStateType = {
             {id: 3, name: "Boris"}
         ],
         messages: [
-            {id: 1, messages: "Hi"},
-            {id: 2, messages: "Hey"},
-            {id: 3, messages: "Lalaley"}
+            {id: 1, sender: "Self", messages: "Hi"},
+            {id: 2, sender: "another_user", messages: "Hey"},
+            {id: 3, sender: "Self", messages: "Lalaley"},
+            {id: 4, sender: "another_user", messages: "Hey"},
+            {id: 5, sender: "Self", messages: "Lalaley"},
+            {id: 6, sender: "another_user", messages: "Hey"},
+            {id: 7, sender: "Self", messages: "Lalaley"}
         ]
     },
     sideBar: {}
