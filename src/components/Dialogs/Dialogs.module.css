@@ -15,4 +15,14 @@
 .messages {
     padding: 10px;
 }
+.sendMessage {
+    display: flex;
+}
+.sendMessageTextArea {
+    margin-left: 10px;
+}
+.sendMessageButton {
+    margin-top: 0;
+    margin-left: 10px;
+}
 
