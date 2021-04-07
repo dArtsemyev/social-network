@@ -7,27 +7,25 @@ import {Profile} from './components/Profile/Profile';
 import {News} from './components/News/News';
 import {Music} from './components/Music/Music';
 import {Settings} from './components/Settings/Settings';
-import {BrowserRouter, Route} from 'react-router-dom';
-import state from './redux/state'
+import {Route} from 'react-router-dom';
+import { StateType } from './redux/state';
 
-function App() {
+function App(props: StateType) {
     return (
-        <BrowserRouter>
             <div className="app-wrapper">
                 <Header/>
-                <Navbar sideBarMenu={state.sideBar.sideBarMenu} friendsBlock={state.sideBar.friendsBlock}/>
+                <Navbar sideBarMenu={props.state.sideBar.sideBarMenu} friendsBlock={props.state.sideBar.friendsBlock}/>
                 <div className="app-wrapper-content">
                     <Route path="/dialogs"
-                           render={() => <Dialogs dialogs={state.dialogsPage.dialogs}
-                                                  messages={state.dialogsPage.messages}/>}/>
+                           render={() => <Dialogs dialogs={props.state.dialogsPage.dialogs}
+                                                  messages={props.state.dialogsPage.messages}/>}/>
                     <Route path="/profile"
-                           render={() => <Profile posts={state.profilePage.posts}/>}/>
+                           render={() => <Profile posts={props.state.profilePage.posts}/>}/>
                     <Route path="/news" component={News}/>
                     <Route path="/music" component={Music}/>
                     <Route path="/settings" component={Settings}/>
                 </div>
             </div>
-        </BrowserRouter>
     );
 }
 

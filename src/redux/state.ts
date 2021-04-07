@@ -39,6 +39,9 @@ export type AppStateType = {
     dialogsPage: DialogsPageType
     sideBar: SideBarType
 }
+export type StateType = {
+    state: AppStateType
+}
 
 let state: AppStateType = {
     profilePage: {
