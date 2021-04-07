@@ -12,12 +12,12 @@ export type MessageType = {
     sender: string
     messages: string
 }
-export  type sideBarMenuType = {
+export  type SideBarMenuType = {
     id: number
     sideBarMenuItemName: string
     path: string
 }
-export type friendsBlockType = {
+export type FriendsBlockType = {
     id: number
     friendAvatarUrl: string
     friendName: string
@@ -30,8 +30,8 @@ export type DialogsPageType = {
     messages: Array<MessageType>
 }
 export type SideBarType = {
-    sideBarMenu: Array<sideBarMenuType>
-    friendsBlock: Array<friendsBlockType>
+    sideBarMenu: Array<SideBarMenuType>
+    friendsBlock: Array<FriendsBlockType>
 }
 
 export type AppStateType = {
@@ -65,11 +65,11 @@ let state: AppStateType = {
     },
     sideBar: {
         sideBarMenu: [
-            {id: 1, sideBarMenuItemName: "Profile", path: ""},
-            {id: 2, sideBarMenuItemName: "Messages", path: ""},
-            {id: 3, sideBarMenuItemName: "News", path: ""},
-            {id: 4, sideBarMenuItemName: "Music", path: ""},
-            {id: 5, sideBarMenuItemName: "Settings", path: ""}
+            {id: 1, sideBarMenuItemName: "Profile", path: "/profile"},
+            {id: 2, sideBarMenuItemName: "Messages", path: "/dialogs"},
+            {id: 3, sideBarMenuItemName: "News", path: "/news"},
+            {id: 4, sideBarMenuItemName: "Music", path: "/music"},
+            {id: 5, sideBarMenuItemName: "Settings", path: "/settings"}
         ],
         friendsBlock: [
             {id: 1, friendAvatarUrl: "https://i05.fotocdn.net/s106/39fa6af418b5b12a/user_xl/2298797445.jpg", friendName: "Vova"},
