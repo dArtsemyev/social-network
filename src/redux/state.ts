@@ -12,6 +12,16 @@ export type MessageType = {
     sender: string
     messages: string
 }
+export  type sideBarMenuType = {
+    id: number
+    sideBarMenuItemName: string
+    path: string
+}
+export type friendsBlockType = {
+    id: number
+    friendAvatarUrl: string
+    friendName: string
+}
 export type ProfilePageType = {
     posts: Array<PostsType>
 }
@@ -19,7 +29,10 @@ export type DialogsPageType = {
     dialogs: Array<DialogsType>
     messages: Array<MessageType>
 }
-export type SideBarType = {}
+export type SideBarType = {
+    sideBarMenu: Array<sideBarMenuType>
+    friendsBlock: Array<friendsBlockType>
+}
 
 export type AppStateType = {
     profilePage: ProfilePageType
@@ -50,6 +63,19 @@ let state: AppStateType = {
             {id: 7, sender: "Self", messages: "Lalaley"}
         ]
     },
-    sideBar: {}
+    sideBar: {
+        sideBarMenu: [
+            {id: 1, sideBarMenuItemName: "Profile", path: ""},
+            {id: 2, sideBarMenuItemName: "Messages", path: ""},
+            {id: 3, sideBarMenuItemName: "News", path: ""},
+            {id: 4, sideBarMenuItemName: "Music", path: ""},
+            {id: 5, sideBarMenuItemName: "Settings", path: ""}
+        ],
+        friendsBlock: [
+            {id: 1, friendAvatarUrl: "https://i05.fotocdn.net/s106/39fa6af418b5b12a/user_xl/2298797445.jpg", friendName: "Vova"},
+            {id: 1, friendAvatarUrl: "https://i05.fotocdn.net/s106/39fa6af418b5b12a/user_xl/2298797445.jpg", friendName: "Vanya"},
+            {id: 1, friendAvatarUrl: "https://i05.fotocdn.net/s106/39fa6af418b5b12a/user_xl/2298797445.jpg", friendName: "Vadim"}
+        ]
+    }
 }
 export default state;
