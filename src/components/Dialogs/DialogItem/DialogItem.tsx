@@ -8,8 +8,8 @@ export function DialogItem(props: DialogsType) {
     let path = "/dialogs/" + props.id
 
     return (
-        <div className={s.dialog + " " + s.active}>
-            <NavLink to={path}>
+        <div className={s.dialog}>
+            <NavLink to={path} activeClassName={s.active}>
                 <div className={s.UserDialog}>
                     <div className={s.userAvatar}>
                         <img src="https://i05.fotocdn.net/s106/39fa6af418b5b12a/user_xl/2298797445.jpg"

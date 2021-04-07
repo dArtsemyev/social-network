@@ -19,3 +19,6 @@
     margin-left: 50px;
     padding: 0 0 5px 5px;
 }
+.dialog a.active {
+    color: red;
+}
