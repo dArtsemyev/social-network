@@ -3,6 +3,11 @@ export type PostsType = {
     message: string
     likeCount: number
 }
+export type newPostType = {
+    id: number
+    message: string
+    likeCount: number
+}
 export type DialogsType = {
     id: number
     name: string
@@ -47,14 +52,14 @@ let state: AppStateType = {
     profilePage: {
         posts: [
             {id: 1, message: "Hi, how are you?", likeCount: 12},
-            {id: 2, message: "It's my first post", likeCount: 37}
+            {id: 2, message: "It's my first post", likeCount: 37},
         ]
     },
     dialogsPage: {
         dialogs: [
             {id: 1, name: "Dmitry"},
             {id: 2, name: "Ivan"},
-            {id: 3, name: "Boris"}
+            {id: 3, name: "Boris"},
         ],
         messages: [
             {id: 1, sender: "Self", messages: "Hi"},
@@ -63,7 +68,7 @@ let state: AppStateType = {
             {id: 4, sender: "another_user", messages: "Hey"},
             {id: 5, sender: "Self", messages: "Lalaley"},
             {id: 6, sender: "another_user", messages: "Hey"},
-            {id: 7, sender: "Self", messages: "Lalaley"}
+            {id: 7, sender: "Self", messages: "Lalaley"},
         ]
     },
     sideBar: {
@@ -72,13 +77,23 @@ let state: AppStateType = {
             {id: 2, sideBarMenuItemName: "Messages", path: "/dialogs"},
             {id: 3, sideBarMenuItemName: "News", path: "/news"},
             {id: 4, sideBarMenuItemName: "Music", path: "/music"},
-            {id: 5, sideBarMenuItemName: "Settings", path: "/settings"}
+            {id: 5, sideBarMenuItemName: "Settings", path: "/settings"},
         ],
         friendsBlock: [
             {id: 1, friendAvatarUrl: "https://i05.fotocdn.net/s106/39fa6af418b5b12a/user_xl/2298797445.jpg", friendName: "Vova"},
             {id: 1, friendAvatarUrl: "https://i05.fotocdn.net/s106/39fa6af418b5b12a/user_xl/2298797445.jpg", friendName: "Vanya"},
-            {id: 1, friendAvatarUrl: "https://i05.fotocdn.net/s106/39fa6af418b5b12a/user_xl/2298797445.jpg", friendName: "Vadim"}
+            {id: 1, friendAvatarUrl: "https://i05.fotocdn.net/s106/39fa6af418b5b12a/user_xl/2298797445.jpg", friendName: "Vadim"},
         ]
     }
 }
+
+export let addPost = (postMessage: string) => {
+    let newPost: newPostType = {
+        id: 3,
+        message: postMessage,
+        likeCount: 0
+    }
+    state.profilePage.posts.push(newPost)
+}
+
 export default state;
