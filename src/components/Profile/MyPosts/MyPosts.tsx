@@ -10,11 +10,12 @@ export function MyPosts(props: MyPostPropsType) {
     let newPostElement: RefObject<HTMLTextAreaElement> = React.createRef()
 
     const addPost = () => {
-        debugger
-        let text = newPostElement.current?.value
-        if(text !== undefined) {
-            props.addPost(text)
+        if(newPostElement.current?.value) {
+            let text = newPostElement.current.value
+                props.addPost(text)
+            newPostElement.current.value = ""
         }
+
     }
 
     return (
