@@ -10,7 +10,7 @@ addPost("SamuraiJs.com")
 
 ReactDOM.render(<React.StrictMode>
         <BrowserRouter>
-            <App state={state}/>
+            <App state={state} addPost={addPost}/>
         </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')

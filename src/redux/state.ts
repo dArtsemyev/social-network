@@ -30,6 +30,14 @@ export type FriendsBlockType = {
 export type ProfilePageType = {
     posts: Array<PostsType>
 }
+export type MyPostPropsType = {
+    posts: Array<PostsType>
+    addPost: (postMessage: string) => void
+}
+export type ProfilePagePropsType = {
+    posts: Array<PostsType>
+    addPost: (postMessage: string) => void
+}
 export type DialogsPageType = {
     dialogs: Array<DialogsType>
     messages: Array<MessageType>
@@ -40,15 +48,16 @@ export type SideBarType = {
 }
 
 export type AppStateType = {
+    state: StateType
+    addPost: (postMessage: string) => void
+}
+export type StateType = {
     profilePage: ProfilePageType
     dialogsPage: DialogsPageType
     sideBar: SideBarType
 }
-export type StateType = {
-    state: AppStateType
-}
 
-let state: AppStateType = {
+let state: StateType = {
     profilePage: {
         posts: [
             {id: 1, message: "Hi, how are you?", likeCount: 12},
@@ -87,7 +96,7 @@ let state: AppStateType = {
     }
 }
 
-export let addPost = (postMessage: string) => {
+export function addPost(postMessage: string) {
     let newPost: newPostType = {
         id: 3,
         message: postMessage,
