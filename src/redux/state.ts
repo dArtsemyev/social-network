@@ -35,13 +35,13 @@ export type ProfilePageType = {
 }
 export type MyPostPropsType = {
     posts: Array<PostsType>
-    addPost: (postMessage: string) => void
+    addPost: () => void
     newPostText: string
     updateNewPostText: (newText: string) => void
 }
 export type ProfilePagePropsType = {
     posts: Array<PostsType>
-    addPost: (postMessage: string) => void
+    addPost: () => void
     newPostText: string
     updateNewPostText: (newText: string) => void
 }
@@ -56,7 +56,7 @@ export type SideBarType = {
 
 export type AppStateType = {
     state: StateType
-    addPost: (postMessage: string) => void
+    addPost: () => void
     updateNewPostText: (newText: string) => void
 }
 export type StateType = {
@@ -105,13 +105,14 @@ let state: StateType = {
     }
 }
 
-export function addPost(postMessage: string) {
+export function addPost() {
     let newPost: newPostType = {
         id: 3,
-        message: postMessage,
+        message: state.profilePage.newPostText,
         likeCount: 0
     }
     state.profilePage.posts.push(newPost)
+    state.profilePage.newPostText = ""
     rerenderEntireTree(state)
 }
 export function updateNewPostText(newText: string) {
