@@ -24,6 +24,8 @@ function App(props: AppStateType) {
                 <Route path="/profile"
                        render={() => <Profile posts={props.state.profilePage.posts}
                                               addPost={props.addPost}
+                                              updateNewPostText={props.updateNewPostText}
+                                              newPostText={props.state.profilePage.newPostText}
                        />}/>
                 <Route path="/news" component={News}/>
                 <Route path="/music" component={Music}/>

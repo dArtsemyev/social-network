@@ -31,14 +31,19 @@ export type FriendsBlockType = {
 }
 export type ProfilePageType = {
     posts: Array<PostsType>
+    newPostText: string
 }
 export type MyPostPropsType = {
     posts: Array<PostsType>
     addPost: (postMessage: string) => void
+    newPostText: string
+    updateNewPostText: (newText: string) => void
 }
 export type ProfilePagePropsType = {
     posts: Array<PostsType>
     addPost: (postMessage: string) => void
+    newPostText: string
+    updateNewPostText: (newText: string) => void
 }
 export type DialogsPageType = {
     dialogs: Array<DialogsType>
@@ -52,6 +57,7 @@ export type SideBarType = {
 export type AppStateType = {
     state: StateType
     addPost: (postMessage: string) => void
+    updateNewPostText: (newText: string) => void
 }
 export type StateType = {
     profilePage: ProfilePageType
@@ -64,7 +70,8 @@ let state: StateType = {
         posts: [
             {id: 1, message: "Hi, how are you?", likeCount: 12},
             {id: 2, message: "It's my first post", likeCount: 37},
-        ]
+        ],
+        newPostText: 'it-camasutra'
     },
     dialogsPage: {
         dialogs: [
@@ -105,6 +112,10 @@ export function addPost(postMessage: string) {
         likeCount: 0
     }
     state.profilePage.posts.push(newPost)
+    rerenderEntireTree(state)
+}
+export function updateNewPostText(newText: string) {
+    state.profilePage.newPostText = newText
     rerenderEntireTree(state)
 }
 

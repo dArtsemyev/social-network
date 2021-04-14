@@ -15,7 +15,13 @@ export function MyPosts(props: MyPostPropsType) {
                 props.addPost(text)
             newPostElement.current.value = ""
         }
-
+    }
+    const onPostChange = () => {
+        if(newPostElement.current?.value) {
+            let text = newPostElement.current.value
+            props.updateNewPostText(text)
+            newPostElement.current.value = ""
+        }
     }
 
     return (
@@ -23,7 +29,9 @@ export function MyPosts(props: MyPostPropsType) {
             <h3>My posts</h3>
             <div>
                 <div>
-                    <textarea ref={newPostElement}></textarea>
+                    <textarea onChange={onPostChange}
+                              ref={newPostElement}
+                              value={props.newPostText}/>
                 </div>
                 <div>
                     <button onClick={addPost}>Add post</button>

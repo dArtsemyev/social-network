@@ -11,6 +11,8 @@ export function Profile(props: ProfilePagePropsType) {
             <ProfileInfo/>
             <MyPosts posts={props.posts}
                      addPost={props.addPost}
+                     updateNewPostText={props.updateNewPostText}
+                     newPostText={props.newPostText}
             />
         </div>
     )
