@@ -1,5 +1,3 @@
-import {rerenderEntireTree} from "../render";
-
 export type PostsType = {
     id: number
     message: string
@@ -65,6 +63,10 @@ export type StateType = {
     sideBar: SideBarType
 }
 
+let rerenderEntireTree = () => {
+    //console.log("state changed")
+}
+
 let state: StateType = {
     profilePage: {
         posts: [
@@ -113,11 +115,15 @@ export function addPost() {
     }
     state.profilePage.posts.push(newPost)
     state.profilePage.newPostText = ""
-    rerenderEntireTree(state)
+    rerenderEntireTree()
 }
 export function updateNewPostText(newText: string) {
     state.profilePage.newPostText = newText
-    rerenderEntireTree(state)
+    rerenderEntireTree()
+}
+
+export const subscribe = (observer: any) => {
+    rerenderEntireTree = observer
 }
 
 export default state;
