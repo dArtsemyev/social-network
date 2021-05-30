@@ -1,0 +1,16 @@
+.footer {
+}
+.footerNav {
+    display: flex;
+    justify-content: center;
+}
+.footerNavButton {
+    padding: 10px 10px;
+}
+.footerNavButton a {
+    color: lightgray;
+    text-decoration: none;
+}
+.footerNavButton a:hover {
+    color: grey;
+}

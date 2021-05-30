@@ -1,0 +1,21 @@
+.nav {
+    margin: 2px 2px 2px 0;
+    padding-top: 15px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: white;
+    box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+}
+.navButton {
+    padding: 5px 20px;
+}
+.navButton a {
+    color: grey;
+    text-decoration: none;
+}
+.navButton a:hover {
+    color: black;
+}
+.navButton.active a {
+    color: #0072E1;
+}
