@@ -1,3 +1,31 @@
 .dialogs {
+    display: flex;
+}
+
+.dialogItems {
+    margin-top: 10px;
+    margin-left: 10px;
+    flex-grow: 1;
+}
+
+.item a {
+    color: grey;
+    text-decoration: none;
+}
+.item a:hover {
+    color: black;
+}
+
+.item a.active {
+    color: #0072E1;
+}
+
+.messages {
+    margin-top: 10px;
+    margin-left: 10px;
+    flex-grow: 4;
+}
+
+.message {
 
 }
