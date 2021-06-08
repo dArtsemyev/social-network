@@ -16,6 +16,6 @@
 .navButton a:hover {
     color: black;
 }
-.navButton.active a {
+.navButton a.active {
     color: #0072E1;
 }
