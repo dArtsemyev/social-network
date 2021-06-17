@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import s from "./Footer.module.css"
 
 function Footer() {
@@ -6,19 +7,19 @@ function Footer() {
         <div className={s.footer}>
             <div className={s.footerNav}>
                 <div className={s.footerNavButton}>
-                    <a href="#a">Profile</a>
+                    <NavLink to="/profile">Profile</NavLink>
                 </div>
                 <div className={s.footerNavButton}>
-                    <a href="#a">Messages</a>
+                    <NavLink to="/dialogs">Messages</NavLink>
                 </div>
                 <div className={s.footerNavButton}>
-                    <a href="#a">News</a>
+                    <NavLink to="/news">News</NavLink>
                 </div>
                 <div className={s.footerNavButton}>
-                    <a href="#a">Music</a>
+                    <NavLink to="music">Music</NavLink>
                 </div>
                 <div className={s.footerNavButton}>
-                    <a href="#a">Settings</a>
+                    <NavLink to="settings">Settings</NavLink>
                 </div>
             </div>
         </div>
