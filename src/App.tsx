@@ -21,10 +21,10 @@ function App(props: AppPropsType) {
             <div className="app-wrapper">
                 <Header/>
                 <div className="nav-content">
-                    <Navbar/>
+                    <Navbar sideBarFriends={props.state.sideBar}/>
                     <div className="content">
-                        <Route path="/profile" render={() => <Profile posts={props.state.profilePage.posts}/>}/>
-                        <Route path="/dialogs" render={() => <Dialogs dialogs={props.state.dialogsPage.dialogs} messages={props.state.dialogsPage.messages}/>}/>
+                        <Route path="/profile" render={() => <Profile profilePage={props.state.profilePage}/>}/>
+                        <Route path="/dialogs" render={() => <Dialogs dialogsPage={props.state.dialogsPage}/>}/>
                         <Route path="/news" render={() => <News/>}/>
                         <Route path="/music" render={() => <Music/>}/>
                         <Route path="/settings" render={() => <Settings/>}/>
