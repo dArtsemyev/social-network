@@ -10,8 +10,13 @@ type DialogsPropsType = {
 
 function Dialogs(props: DialogsPropsType) {
 
-    let dialogsElements = props.dialogsPage.dialogs.map(dialog => <DialogItem key={dialog.id} name={dialog.name} id={dialog.id}/>)
-    let messagesElements = props.dialogsPage.messages.map(message => <Message key={message.id} message={message.message}/>)
+    let dialogsElements = props.dialogsPage.dialogs.map(dialog => <DialogItem key={dialog.id}
+                                                                              name={dialog.name}
+                                                                              ava={dialog.ava}
+                                                                              id={dialog.id}/>)
+    let messagesElements = props.dialogsPage.messages.map(message => <Message key={message.id}
+                                                                              message={message.message}
+                                                                              id={message.id}/>)
 
     return (
         <div className={s.dialogs}>
